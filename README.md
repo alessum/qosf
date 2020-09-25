@@ -1,4 +1,4 @@
-# qosf
+# Task 3 - Summer Alessndro - qosf 2020
 Essentially, what the task asks for is to demonstrate that (RX, RY, CZ) is a Universal set, since its able to decompose any basic operator (I,H, X, Y, Z, RX, RY, RZ, CX, CZ). Amongst these we identify a Universal set: H, RZ, CNOT. So, any other operation involving any N number of qubits can be expressed though these 3 operators.\\
 
 ## Short algorithm description
