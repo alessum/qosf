@@ -16,7 +16,7 @@ def I(q, qc):
 def H(q, qc):
     return RZ('pi/2', q, qc) + RX('pi/2', q, qc) + RZ('pi/2', q, qc)
 def X(q, qc):
-    return RX( 'pi', q, qc) + RZ('pi', q, qc)
+    return RX( 'pi', q, qc)
 def Y(q, qc):
     return RX('pi', q, qc) + RZ('-pi', q ,qc)
 def Z(q, qc):
@@ -28,6 +28,7 @@ def CNOT(q1, q2, qc):
 
 
 def Rewrite_op(row, op, q1, q2, qc):
+    '''calls the single operation methods to finally write the new operations in the row'''
     operation = ''
     if (len(op) == 1):
         if op == 'h':
@@ -57,6 +58,7 @@ def Rewrite_op(row, op, q1, q2, qc):
 
 
 def Convert(row):
+    '''identifies the significant parts of the line and calls the Rewrite_op method'''
     q1, q2, body, qc = '', '', '', ''
     start, i, j = 0,0,0
     num_par = 1
@@ -128,7 +130,10 @@ def Convert(row):
     
     
 
-file = './ciao.txt'
+
+'''                   Main                    '''
+
+file = input("Please enter the file name as path/filename.extension: ")
 fh = open(file, 'r', encoding="utf-8") 
 i = file[2:].find('.')
 filename = file[2:i+2]
